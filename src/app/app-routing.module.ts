@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { IraComponent } from './ira/ira.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateIraComponent } from './create-ira/create-ira.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "ira", component: IraComponent},
-  {path: "dashboard", component: DashboardComponent}
+  {path: "dashboard", component: DashboardComponent},
+  {path: "create-ira", component: CreateIraComponent}
 ];
 
 @NgModule({

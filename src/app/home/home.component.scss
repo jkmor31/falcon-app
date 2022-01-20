@@ -52,26 +52,42 @@
 }
 
 .investments {
-    display: flex;
-    justify-content: space-evenly;
     min-height: 400px;
-    background-color: #457b9d;
-    aside {
-        padding: 40px;
-        border-left: 1px solid black;
-        text-align: center;
+    background-color: #457b9dbf;
+    padding: 10px 20px 40px 20px;
+    h2 {
+        padding: 20px;
+        font-size: 36px;
+        margin-left: 30px;
+    }
+    div {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        a {
-            text-decoration: none;
-            color: white;
-            background-color: #1d3557;
-            padding: 7px;
-            border-radius: 5px;
+        justify-content: space-evenly;
+        .mutual-funds {
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+
         }
-        a:hover {
-            background-color: #3336908e;
+        aside {
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            a {
+                text-decoration: none;
+                color: white;
+                background-color: #1d3557;
+                padding: 7px;
+                border-radius: 5px;
+            }
+            a:hover {
+                background-color: #3336908e;
+            }
         }
     }
+}
+
+h3 {
+    font-size: 24px;
 }

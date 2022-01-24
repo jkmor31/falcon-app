@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Oswald&family=Playfair+Display&display=swap');
 
+html, body { height: 100%; }
 body {
+    margin: 0;
     font-family: 'Merriweather', serif;
 }
 
@@ -13,5 +15,4 @@ h2, h3 {
     font-family: 'Playfair Display', serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -1,0 +1,17 @@
+.container {
+    padding: 20px;
+    background-color: #457b9dbf;
+    min-height: 100vh;
+    h1 {
+        padding: 20px;
+        font-size: 26px;
+    }
+    mat-card {
+        margin: 20px;
+    }
+    .info {
+        th {
+            padding: 5px 15px;
+        }
+    }
+}

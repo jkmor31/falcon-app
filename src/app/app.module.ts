@@ -9,6 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { IraComponent } from './ira/ira.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateIraComponent } from './create-ira/create-ira.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { CreateIraComponent } from './create-ira/create-ira.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

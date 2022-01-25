@@ -12,6 +12,7 @@ import { CreateIraComponent } from './create-ira/create-ira.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {MatCardModule} from '@angular/material/card';
     HomeComponent,
     IraComponent,
     DashboardComponent,
-    CreateIraComponent
+    CreateIraComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

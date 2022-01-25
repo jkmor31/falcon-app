@@ -4,10 +4,11 @@
     background-color:#f1faee ;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 40px;
     img {
         max-width: 600px;
         border: 1px solid black;
+        border-radius: 15px;
     }
 }
 
@@ -18,7 +19,7 @@
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     h2 {
-        padding: 20px;
+        padding: 40px;
         font-size: 36px;
         margin-left: 30px;
     }
@@ -58,8 +59,7 @@
     background-color: #457b9dbf;
     padding: 10px 20px 40px 20px;
     h2 {
-        padding: 20px;
-        font-size: 36px;
+        padding: 40px;
         margin-left: 30px;
     }
     div {
@@ -90,10 +90,19 @@
     }
 }
 
+h2 {
+    font-size: 34px;
+    font-family: 'Merriweather', serif;
+
+}
+
 h3 {
     font-size: 24px;
+    font-family: 'Playfair Display', serif;
+
 }
 
 mat-icon {
-    margin: auto;
+    margin: 20px auto 30px auto;
+    font-size: 30px;
 }

@@ -1,0 +1,12 @@
+<h1>Available Mutual Funds:</h1>
+
+
+<div class="container" >
+    <div class="card" *ngFor="let investment of investments">
+        <p>{{investment.mf_id}} - {{investment.fundName}}</p>
+        <p>Symbol: {{investment.symbol}}</p>
+        <p>Expense Ratio: {{investment.expenseRatio}}</p>
+        <p>NAV: ${{investment.nAV}}</p>
+        <p>Inception Date: ${{investment.inceptionDate}}</p>
+    </div>
+</div>

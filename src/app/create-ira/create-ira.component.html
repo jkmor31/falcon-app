@@ -1,27 +1,32 @@
-<p>create-ira works!</p>
-<h1>Create new IRA</h1>
+
 <div class="container">
+  <h1>Create New IRA</h1>
   <div class="card">
     <table>
-        <tr>
-          <th>UserId:</th>
-          <td><input [(ngModel)]="newIra.userId" type="text" /></td>    </tr>
+      <tr>
+        <th>User Id:</th>
+        <td><input [(ngModel)]="newIra.userId" type="text" /></td>
+      </tr>
 
-        <tr>
-          <th>Name:</th>
-          <td><input [(ngModel)]="newIra.label" type="text" /></td>
-        </tr>
-        <tr>
-          <th>Balance:</th>
-          <td><input [(ngModel)]="newIra.balance" type="text" /></td>
-        </tr>
-        <tr>
-          <th>Annual Contribution:</th>
-          <td><input [(ngModel)]="newIra.annualContribution" type="text" /></td>
-        </tr>
-        
-      </table>
-      <button type="submit" (click)="createIra()">Add!</button>
-
+      <tr>
+        <th>Account Type:</th>
+        <td>
+          <select [(ngModel)]="newIra.label" type="text">
+            <option value="Traditional IRA">Traditional IRA</option>
+            <option value="Roth IRA">Roth IRA</option>
+            <option value="Spousal IRA">Spousal IRA</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>Balance:</th>
+        <td><input [(ngModel)]="newIra.balance" type="text" /></td>
+      </tr>
+      <tr>
+        <th>Annual Contribution:</th>
+        <td><input [(ngModel)]="newIra.annualContribution" type="text" /></td>
+      </tr>
+    </table>
+    <button type="submit" (click)="createIra()">Add!</button>
   </div>
 </div>

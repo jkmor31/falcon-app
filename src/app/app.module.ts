@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
+import { InvestmentsComponent } from './investments/investments.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     IraComponent,
     DashboardComponent,
     CreateIraComponent,
-    FooterComponent
+    FooterComponent,
+    InvestmentsComponent
   ],
   imports: [
     BrowserModule,

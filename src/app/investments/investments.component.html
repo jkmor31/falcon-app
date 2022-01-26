@@ -1,12 +1,31 @@
 <h1>Available Mutual Funds:</h1>
-
-
 <div class="container" >
-    <div class="card" *ngFor="let investment of investments">
-        <p>{{investment.mf_id}} - {{investment.fundName}}</p>
-        <p>Symbol: {{investment.symbol}}</p>
-        <p>Expense Ratio: {{investment.expenseRatio}}</p>
-        <p>NAV: ${{investment.nAV}}</p>
-        <p>Inception Date: ${{investment.inceptionDate}}</p>
-    </div>
+<mat-card>
+
+<table>
+    <tr><th>Investment Name</th>
+    <th>Symbol</th>
+    <th>Investment Type</th>
+    <th>Expense Ratio</th>
+    <th>NAV</th>
+    <th>Date Created</th>
+    <th>Add to Portfolio</th>
+
+</tr>
+    <tr *ngFor="let investment of investments">
+        <td>{{investment.fundName}}</td>
+        <td>{{investment.symbol}}</td>
+        <td>Mutual Fund</td>
+        <td>{{investment.expenseRatio}}</td>
+        <td>{{investment.nAV | currency}}</td>
+        <td>{{investment.inceptionDate | date}}</td>
+        <td>
+            <button mat-mini-fab color="primary" aria-label="icon button with a plus icon">
+                <mat-icon>add</mat-icon>
+            </button>
+        </td>
+    </tr>
+
+</table>
+</mat-card>
 </div>

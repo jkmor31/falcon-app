@@ -24,17 +24,27 @@
         <mat-card><h2>Investment Portfolio</h2>
         <table class="investments">
             <th>Investment Name</th>
+            <th>Symbol</th>
             <th>Investment Type</th>
-            <th>Current Value</th>
-            <th>Holdings</th>
+            <th>Expense Ratio</th>
+            <th>NAV</th>
             <th>Date Created</th>
             <tr>
                 <td>Vanguard Index 500</td>
+                <td>VFINX</td>
                 <td>Mutual Fund</td>
-                <td>$414.10</td>
-                <td>3</td>
+                <td>0.04</td>
+                <td>$404.14</td>
                 <td>Mar 12, 2020</td>
             </tr>
+            <!-- <tr *ngFor="let investment of investments">
+                <td>{{investment.fundName}}</td>
+                <td>{{investment.symbol}}</td>
+                <td>Mutual Fund</td>
+                <td>{{investment.expenseRatio}}</td>
+                <td>{{investment.nAV | currency}}</td>
+                <td>{{investment.inceptionDate | date}}</td>
+            </tr> -->
     
         </table>
     <a routerLink="/investments">Add Investments</a>

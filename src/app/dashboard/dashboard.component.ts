@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
         this.ira = payload;
         this.iraArr = Object.entries(this.ira);
         this.iraArr.pop();
+        this.iraArr.pop();
         this.iraArr.splice(4,1);
         for (let i = 0; i < this.iraArr.length; i++) {
           let firstChar = this.iraArr[i][0].split('');

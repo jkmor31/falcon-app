@@ -1,32 +1,46 @@
-
+<h1>Create New IRA</h1>
 <div class="container">
-  <h1>Create New IRA</h1>
+
+  <mat-card>
   <div class="card">
     <table>
       <tr>
         <th>User Id:</th>
-        <td><input [(ngModel)]="newIra.userId" type="text" /></td>
+        <td><mat-form-field appearance="fill">
+          <mat-label>User Id</mat-label>
+          <input matInput [(ngModel)]="newIra.userId"/>
+        </mat-form-field></td>
       </tr>
 
       <tr>
         <th>Account Type:</th>
         <td>
-          <select [(ngModel)]="newIra.label" type="text">
-            <option value="Traditional IRA">Traditional IRA</option>
-            <option value="Roth IRA">Roth IRA</option>
-            <option value="Spousal IRA">Spousal IRA</option>
-          </select>
+          <mat-form-field appearance="fill">
+            <mat-label>Account Type:</mat-label>
+          <mat-select [(ngModel)]="newIra.label" type="text">
+            <mat-option value="Traditional IRA">Traditional IRA</mat-option>
+            <mat-option value="Roth IRA">Roth IRA</mat-option>
+            <mat-option value="Spousal IRA">Spousal IRA</mat-option>
+          </mat-select>
+        </mat-form-field>
         </td>
       </tr>
       <tr>
         <th>Balance:</th>
-        <td><input [(ngModel)]="newIra.balance" type="text" /></td>
+        <td><mat-form-field appearance="fill">
+          <mat-label>Balance</mat-label>
+          <input matInput [(ngModel)]="newIra.balance" type="text" />
+        </mat-form-field></td>
       </tr>
       <tr>
         <th>Annual Contribution:</th>
-        <td><input [(ngModel)]="newIra.annualContribution" type="text" /></td>
+        <td><mat-form-field appearance="fill">
+          <mat-label>Annual Contribution</mat-label>
+          <input matInput [(ngModel)]="newIra.annualContribution" type="text" />
+        </mat-form-field></td>
       </tr>
     </table>
-    <button type="submit" (click)="createIra()">Add!</button>
+    <button mat-raised-button color="primary" type="submit" (click)="createIra()">Add!</button>
   </div>
+</mat-card>
 </div>

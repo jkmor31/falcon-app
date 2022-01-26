@@ -14,6 +14,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { InvestmentsComponent } from './investments/investments.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
+
+
 
 
 @NgModule({
@@ -33,7 +39,10 @@ import { InvestmentsComponent } from './investments/investments.component';
     FormsModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

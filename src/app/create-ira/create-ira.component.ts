@@ -10,11 +10,11 @@ import { IraService } from '../ira.service';
 })
 export class CreateIraComponent implements OnInit {
   newIra: Ira = {
-    id: 0,
-    label: '',
-    balance: 0,
-    annualContribution: 0,
-    userId: 0
+    // id: null,
+    // label: '',
+    // balance: 0,
+    // annualContribution: 0,
+    // userId: 0
   }
 
 

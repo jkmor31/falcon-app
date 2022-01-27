@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IraService } from '../ira.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ira } from '../create-ira/create-ira.model';
+import { Investment } from '../investments/investment.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +12,8 @@ import { Ira } from '../create-ira/create-ira.model';
 export class DashboardComponent implements OnInit {
   ira: Ira = {};
   iraArr: any[][] = [];
+  investments: Investment[] = [];
+
   constructor(
     private route:ActivatedRoute,
     private router: Router,
@@ -35,5 +38,13 @@ export class DashboardComponent implements OnInit {
         this.iraArr[4][0] = 'Account Date';
       })
     })
+    this.getInvestments();
   }
+
+getInvestments(): void {
+  this.iraService.getInvestments().subscribe(payload =>{
+    this.investments = payload;
+  })
+}
+
 }

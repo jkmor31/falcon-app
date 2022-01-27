@@ -12,19 +12,31 @@
     <th>Add to Portfolio</th>
 
 </tr>
-    <tr *ngFor="let investment of investments">
-        <td>{{investment.fundName}}</td>
-        <td>{{investment.symbol}}</td>
-        <td>Mutual Fund</td>
-        <td>{{investment.expenseRatio}}</td>
-        <td>{{investment.nAV | currency}}</td>
-        <td>{{investment.inceptionDate | date}}</td>
-        <td>
-            <button mat-mini-fab color="primary" aria-label="icon button with a plus icon">
-                <mat-icon>add</mat-icon>
-            </button>
-        </td>
-    </tr>
+    <tr *ngFor="let investment of tempFundList, let i = index">
+            
+            <td>{{investment.fundName}}</td>
+            <td>{{investment.symbol}}</td>
+            <td>Mutual Fund</td>
+            <td>{{investment.expenseRatio}}</td>
+            <td>{{investment.nAV | currency}}</td>
+            <td>{{investment.inceptionDate | date}}</td>
+            <td>
+                <div *ngIf="localArray[i]==false">
+                <button (click)="addInvestment(i)" mat-mini-fab color="primary" aria-label="icon button with a plus icon">
+                    <mat-icon>add</mat-icon>
+                </button>
+                </div>
+                <div *ngIf="localArray[i]==true">
+                    <td>
+                        <button mat-mini-fab disabled color="primary">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </td>
+                </div>
+            </td>
+        
+        </tr>
+    
 
 </table>
 </mat-card>

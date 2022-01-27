@@ -1,54 +1,54 @@
-<div class="container">
-
-    <h1>Welcome!</h1>
-    
+<div class="wrapper">
+  <h1>Welcome!</h1>
+  <div class="container">
     <div>
-        <mat-card><h2>User info</h2>
+      <mat-card
+        ><h2>User info</h2>
         <table class="info">
-            
-            <tr><th>Name: </th><td>James</td></tr>
-            <tr><th>Age: </th><td>28</td></tr>
-            <tr *ngFor="let ira of iraArr">
-                <th>{{ira[0]}}:</th>
-                <div [ngSwitch]="ira[0]">
-                    <td *ngSwitchCase="'Account Date'">{{ira[1] | date}}</td>
-                    <td *ngSwitchCase="'Balance'">{{ira[1] | currency}}</td>
-                    <td *ngSwitchCase="'Annual Contribution'">{{ira[1] | currency}}</td>
-                    <td *ngSwitchDefault>{{ira[1]}}</td>
+          <tr>
+            <th>Name:</th>
+            <td>James</td>
+          </tr>
+          <tr>
+            <th>Age:</th>
+            <td>28</td>
+          </tr>
+          <tr *ngFor="let ira of iraArr">
+            <th>{{ ira[0] }}:</th>
+            <div [ngSwitch]="ira[0]">
+              <td *ngSwitchCase="'Account Date'">{{ ira[1] | date }}</td>
+              <td *ngSwitchCase="'Balance'">{{ ira[1] | currency }}</td>
+              <td *ngSwitchCase="'Annual Contribution'">
+                {{ ira[1] | currency }}
+              </td>
+              <td *ngSwitchDefault>{{ ira[1] }}</td>
             </div>
-            </tr>
-    
-        </table></mat-card>
+          </tr>
+        </table></mat-card
+      >
     </div>
     <div>
-        <mat-card><h2>Investment Portfolio</h2>
+      <mat-card
+        ><h2>Investment Portfolio</h2>
         <table class="investments">
-            <th>Investment Name</th>
-            <th>Symbol</th>
-            <th>Investment Type</th>
-            <th>Expense Ratio</th>
-            <th>NAV</th>
-            <th>Date Created</th>
-            <tr>
-                <td>Vanguard Index 500</td>
-                <td>VFINX</td>
-                <td>Mutual Fund</td>
-                <td>0.04</td>
-                <td>$404.14</td>
-                <td>Mar 12, 2020</td>
-            </tr>
-            <!-- <tr *ngFor="let investment of investments">
-                <td>{{investment.fundName}}</td>
-                <td>{{investment.symbol}}</td>
-                <td>Mutual Fund</td>
-                <td>{{investment.expenseRatio}}</td>
-                <td>{{investment.nAV | currency}}</td>
-                <td>{{investment.inceptionDate | date}}</td>
-            </tr> -->
-    
-        </table>
-    <a routerLink="/investments">Add Investments</a>
-    </mat-card>
-    </div>
+          <th>Investment Name</th>
+          <th>Symbol</th>
+          <th>Investment Type</th>
+          <th>Expense Ratio</th>
+          <th>NAV</th>
+          <th>Date Created</th>
 
-</div>    
+          <tr *ngFor="let investment of investments">
+            <td>{{ investment.name }}</td>
+            <td>{{ investment.symbol }}</td>
+            <td>{{ investment.type }}</td>
+            <td>{{ investment.expenseRatio }}</td>
+            <td>{{ investment.nAV | currency }}</td>
+            <td>{{ investment.inceptionDate | date }}</td>
+          </tr>
+        </table>
+        <a routerLink="/investments">Add Investments</a>
+      </mat-card>
+    </div>
+  </div>
+</div>

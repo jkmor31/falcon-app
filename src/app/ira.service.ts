@@ -24,4 +24,12 @@ export class IraService {
   getUser(id: number):Observable<any> {
     return this.http.get(this.url + 'users/' + id);
   }
+
+  createInvestment(newInvestment: Object): Observable<any>{
+    return this.http.post<any>(this.url + 'investments/', newInvestment);
+  }
+
+  getInvestments():Observable<any>{
+    return this.http.get(this.url + 'investments');
+  }
 }

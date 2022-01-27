@@ -1,17 +1,35 @@
+.wrapper {
+    background-color: #457b9dbf;
+}
 .container {
     padding: 20px;
     background-color: #457b9dbf;
     min-height: 80vh;
+    display: flex;
     h1 {
         padding: 20px;
         font-size: 26px;
     }
     mat-card {
-        margin: 20px;
+        margin: 10px auto;
+        display: inline-block;
+        padding: 20px;
+        text-align: center;
     }
     .info {
         th {
             padding: 5px 15px;
         }
     }
+    .investments {
+            margin: auto;
+            font-size: 16px;
+            td {
+                padding: 5px 15px;
+            }
+            th {
+                padding: 10px 15px;
+                border-bottom: 1px solid black;
+            }
+        }
 }

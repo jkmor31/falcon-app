@@ -1,9 +1,10 @@
 export interface Investment {
-    mf_id?: number,
-    fundName?: string,
+    id?: number,
+    name?: string,
     symbol?: string,
+    type?: string,
     expenseRatio?: number,
     nAV?: number,
     inceptionDate?: string,
-    userId?: number
+    accountId?: number
 }

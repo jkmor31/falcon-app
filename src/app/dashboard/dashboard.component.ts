@@ -3,6 +3,7 @@ import { IraService } from '../ira.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ira } from '../create-ira/create-ira.model';
 import { Investment } from '../investments/investment.model';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,8 @@ export class DashboardComponent implements OnInit {
   ira: Ira = {};
   iraArr: any[][] = [];
   investments: Investment[] = [];
+  user: User[] = [];
+  userArr: any[][] = [];
 
   constructor(
     private route:ActivatedRoute,
@@ -22,6 +25,14 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params=>{
       const myid = +params['id'];
+      this.iraService.getUser(myid).subscribe(payload => {
+        this.user = payload;
+        this.userArr = Object.entries(this.user);
+        this.iraArr.pop();
+        this.iraArr.pop();
+        this.iraArr.pop();
+        this.iraArr.pop();
+      })
       this.iraService.getIra(myid).subscribe(payload =>{
         this.ira = payload;
         this.iraArr = Object.entries(this.ira);

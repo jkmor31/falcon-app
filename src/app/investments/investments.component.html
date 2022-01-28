@@ -12,7 +12,7 @@
     <th>Add to Portfolio</th>
 
 </tr>
-    <tr *ngFor="let investment of tempFundList, let i = index">
+    <tr *ngFor="let investment of funds, let i = index">
             
             <td>{{investment.fundName}}</td>
             <td>{{investment.symbol}}</td>
@@ -21,12 +21,12 @@
             <td>{{investment.nAV | currency}}</td>
             <td>{{investment.inceptionDate | date}}</td>
             <td>
-                <div *ngIf="localArray[i]==false">
+                <div *ngIf="newArr[i]==null">
                 <button (click)="addInvestment(i)" mat-mini-fab color="primary" aria-label="icon button with a plus icon">
                     <mat-icon>add</mat-icon>
                 </button>
                 </div>
-                <div *ngIf="localArray[i]==true">
+                <div *ngIf="newArr[i]==true">
                     <td>
                         <button mat-mini-fab disabled color="primary">
                             <mat-icon>add</mat-icon>

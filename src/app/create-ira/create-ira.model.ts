@@ -3,5 +3,6 @@ export interface Ira {
     label?: string,
     balance?: number,
     annualContribution?: number,
-    userId?: number
+    userId?: number,
+    createdAt?: string
 }

@@ -7,11 +7,13 @@ import { CreateIraComponent } from './create-ira/create-ira.component';
 import { InvestmentsComponent } from './investments/investments.component';
 
 const routes: Routes = [
+  {path: "", redirectTo: 'HomeComponent', pathMatch: 'full'},
   {path: "home", component: HomeComponent},
   {path: "ira", component: IraComponent},
   {path: "dashboard/:id", component: DashboardComponent},
   {path: "investments", component: InvestmentsComponent},
-  {path: "create-ira", component: CreateIraComponent}
+  {path: "create-ira", component: CreateIraComponent},
+
 ];
 
 @NgModule({

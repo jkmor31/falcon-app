@@ -24,56 +24,29 @@ export class InvestmentsComponent implements OnInit {
     private iraService: IraService,
     ) { }
   
-
-
-   ngOnInit(): void {
+  ngOnInit(): void {
     this.getInvestments();
     this.getFunds();
+  }
 
-  
-}
-
- getFunds(): void {
-  this.investmentsService.getInvestments().subscribe(payload =>{
-    this.funds = payload;
-    //this.tempFundList = this.investments
-    // console.log(this.localArray);
-    for (let i = 0; i < this.investments.length; i++){
-      //let localArray = []
-      for (let j = 0; j < this.funds.length; j++){
-        if(this.funds[j].fundName == this.investments[i].name) {
-          this.newArr[j] = true;
-        }else {
-          //localArray.push(false);
-          //this.newArr[j] = false;
+  getFunds(): void {
+    this.investmentsService.getInvestments().subscribe(payload =>{
+      this.funds = payload;
+      for (let i = 0; i < this.investments.length; i++){
+        for (let j = 0; j < this.funds.length; j++){
+          if(this.funds[j].fundName == this.investments[i].name) {
+            this.newArr[j] = true;
+          }
         }
       }
-      //this.sortedInvestments.push(localArray)
+    });
+  }
 
-      }
-      console.log(this.newArr)
-  })
-
-}
   getInvestments(): void {
     this.iraService.getInvestments().subscribe(payload =>{
       this.investments = payload;
-  });
-}
-
- compare(): void {
-    for (let i = 0; i < this.funds.length; i++) {
-      if (this.investments[i].name != this.funds[i].fundName) {
-        this.sortedInvestments.push(true);
-      } else {
-        this.sortedInvestments.push(false);
-      }
-    }
-    console.log(this.funds)
-  console.log(this.sortedInvestments)
-
-}
-
+    });
+  }
 
   addInvestment(index: number): void {
     this.reconstituteFund(index);
@@ -115,16 +88,7 @@ export class InvestmentsComponent implements OnInit {
   }
 
   makeUsed(index:number): void {
-    // this.localArray[index] = true;
-    // console.log(this.localArray);
-    // this.investmentStore.setState({
-    //   ...this.investmentStore.state,
-      
-    //   localObj: {
-    //     ...this.investmentStore.state.localObj,
-    //     used: true
-    //   }
-    // })
+    this.newArr[index] = true; 
   }
 
 }

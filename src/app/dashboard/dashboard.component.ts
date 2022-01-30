@@ -11,11 +11,9 @@ import { User } from '../user.model';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  ira: Ira = {};
-  iraArr: any[][] = [];
+  iras: Ira[] = [];
   investments: Investment[] = [];
-  user: User[] = [];
-  userArr: any[][] = [];
+  users: User[] = [];
 
   constructor(
     private route:ActivatedRoute,
@@ -25,30 +23,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params=>{
       const myid = +params['id'];
-      this.iraService.getUser(myid).subscribe(payload => {
-        this.user = payload;
-        this.userArr = Object.entries(this.user);
-        this.iraArr.pop();
-        this.iraArr.pop();
-        this.iraArr.pop();
-        this.iraArr.pop();
-      })
-      this.iraService.getIra(myid).subscribe(payload =>{
-        this.ira = payload;
-        this.iraArr = Object.entries(this.ira);
-        this.iraArr.pop();
-        this.iraArr.pop();
-        this.iraArr.splice(4,1);
-        for (let i = 0; i < this.iraArr.length; i++) {
-          let firstChar = this.iraArr[i][0].split('');
-          firstChar[0] = firstChar[0].toUpperCase();
-          firstChar = firstChar.join('');
-          this.iraArr[i][0] = firstChar;
-        }
-        this.iraArr[3][0] = 'Annual Contribution';
-        this.iraArr[4][0] = 'Account Date';
-      })
+      this.iraService.getUsers().subscribe(payload => {
+        this.users = payload;
+      })})
+    this.iraService.getIras().subscribe(payload =>{
+      this.iras = payload;
     })
+
     this.getInvestments();
   }
 

@@ -2,26 +2,36 @@
   <h1>Welcome!</h1>
   <div class="container">
     <div>
-      <mat-card
-        ><h2>User info</h2>
-        <table class="info">
-          <tr *ngFor="let user of userArr">
-            <th>{{user[0]}}</th>
-            <td>{{user[1]}}</td>
-          </tr>
-          <tr *ngFor="let ira of iraArr">
-            <th>{{ ira[0] }}:</th>
-            <div [ngSwitch]="ira[0]">
-              <td *ngSwitchCase="'Account Date'">{{ ira[1] | date }}</td>
-              <td *ngSwitchCase="'Balance'">{{ ira[1] | currency }}</td>
-              <td *ngSwitchCase="'Annual Contribution'">
-                {{ ira[1] | currency }}
-              </td>
-              <td *ngSwitchDefault>{{ ira[1] }}</td>
-            </div>
-          </tr>
-        </table></mat-card
-      >
+      <mat-card>
+        <h2>User info</h2>
+        <div class="info">
+          <table *ngFor="let user of users">
+            <tr>
+              <th>Name:</th><td>{{user.name | titlecase}}</td>
+            </tr>
+            <tr>
+              <th>Age:</th><td>{{user.age}}</td>
+            </tr>
+            <tr>
+              <th>Email:</th><td>{{user.email}}</td>
+            </tr>
+            <ng-container *ngFor="let ira of iras">
+              <tr>
+                <th>Account Type:</th><td>{{ira.label}}</td>
+              </tr>
+              <tr>
+                <th>Balance:</th><td>{{ira.balance | currency}}</td>
+              </tr>
+              <tr>
+                <th>Annual Contribution:</th><td>{{ira.annualContribution | currency}}</td>
+              </tr>
+              <tr>
+                <th>Account Date:</th><td>{{ira.createdAt |  date}}</td>
+              </tr>
+            </ng-container>
+        </table>
+      </div>
+    </mat-card>
     </div>
     <div>
       <mat-card

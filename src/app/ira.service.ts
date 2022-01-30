@@ -13,8 +13,12 @@ export class IraService {
     this.url = 'https://pg-new-db.herokuapp.com/';
   }
 
-  getIra(id: number): Observable<any> {
-    return this.http.get(this.url + 'accounts/' + id);
+  getIra(id: number): Observable<Ira> {
+    return this.http.get<Ira>(this.url + 'accounts/' + id);
+  }
+  
+  getIras(): Observable<any> {
+    return this.http.get<any>(this.url + 'accounts');
   }
 
   createIra(newIra: Object): Observable<any> {
@@ -23,6 +27,10 @@ export class IraService {
 
   getUser(id: number):Observable<any> {
     return this.http.get(this.url + 'users/' + id);
+  }
+
+  getUsers():Observable<any> {
+    return this.http.get(this.url + 'users');
   }
 
   createInvestment(newInvestment: Object): Observable<any>{

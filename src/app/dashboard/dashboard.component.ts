@@ -28,15 +28,15 @@ export class DashboardComponent implements OnInit {
       })})
     this.iraService.getIras().subscribe(payload =>{
       this.iras = payload;
+      this.investments = payload[0].investments;
     })
 
-    this.getInvestments();
   }
 
-getInvestments(): void {
-  this.iraService.getInvestments().subscribe(payload =>{
-    this.investments = payload;
-  })
+
+deleteInvestment(id: number | undefined, index: number) {
+  this.iraService.deleteInvestment(id).subscribe();
+  this.investments.splice(index, 1);
 }
 
 }

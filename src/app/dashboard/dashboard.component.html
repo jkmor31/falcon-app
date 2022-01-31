@@ -1,32 +1,32 @@
 <div class="wrapper">
-  <h1>Welcome!</h1>
+  <h1>Welcome {{users[0].name | titlecase}}!</h1>
   <div class="container">
     <div>
       <mat-card>
         <h2>User info</h2>
         <div class="info">
-          <table *ngFor="let user of users">
+          <table >
             <tr>
-              <th>Name:</th><td>{{user.name | titlecase}}</td>
+              <th>Name:</th><td>{{users[0].name | titlecase}}</td>
             </tr>
             <tr>
-              <th>Age:</th><td>{{user.age}}</td>
+              <th>Age:</th><td>{{users[0].age}}</td>
             </tr>
             <tr>
-              <th>Email:</th><td>{{user.email}}</td>
+              <th>Email:</th><td>{{users[0].email}}</td>
             </tr>
-            <ng-container *ngFor="let ira of iras">
+            <ng-container >
               <tr>
-                <th>Account Type:</th><td>{{ira.label}}</td>
+                <th>Account Type:</th><td>{{iras[0].label}}</td>
               </tr>
               <tr>
-                <th>Balance:</th><td>{{ira.balance | currency}}</td>
+                <th>Balance:</th><td>{{iras[0].balance | currency}}</td>
               </tr>
               <tr>
-                <th>Annual Contribution:</th><td>{{ira.annualContribution | currency}}</td>
+                <th>Annual Contribution:</th><td>{{iras[0].annualContribution | currency}}</td>
               </tr>
               <tr>
-                <th>Account Date:</th><td>{{ira.createdAt |  date}}</td>
+                <th>Account Date:</th><td>{{iras[0].createdAt |  date}}</td>
               </tr>
             </ng-container>
         </table>
@@ -43,14 +43,18 @@
           <th>Expense Ratio</th>
           <th>NAV</th>
           <th>Date Created</th>
+          <th>Delete</th>
 
-          <tr *ngFor="let investment of investments">
+          <tr *ngFor="let investment of investments, let i = index">
             <td>{{ investment.name }}</td>
             <td>{{ investment.symbol }}</td>
             <td>{{ investment.type }}</td>
             <td>{{ investment.expenseRatio }}</td>
             <td>{{ investment.nAV | currency }}</td>
             <td>{{ investment.inceptionDate | date }}</td>
+            <button (click)="deleteInvestment(investment.id, i)" mat-mini-fab color="primary" aria-label="icon button with a plus icon">
+              <mat-icon>delete</mat-icon>
+          </button>
           </tr>
         </table>
         <a routerLink="/investments">Add Investments</a>

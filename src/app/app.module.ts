@@ -17,6 +17,7 @@ import { InvestmentsComponent } from './investments/investments.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

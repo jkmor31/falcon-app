@@ -43,8 +43,8 @@ export class InvestmentsComponent implements OnInit {
   }
 
   getInvestments(): void {
-    this.iraService.getInvestments().subscribe(payload =>{
-      this.investments = payload;
+    this.iraService.getIras().subscribe(payload =>{
+      this.investments = payload[0].investments;
     });
   }
 

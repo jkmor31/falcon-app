@@ -28,7 +28,7 @@ export class CreateIraComponent implements OnInit {
 createIra(): void {
   this.iraService.createIra(this.newIra).subscribe(data => {
     if(data) {
-      this.router.navigateByUrl("/dashboard/1");
+      this.router.navigateByUrl("/dashboard/" + data.id);
     }
   })
 }

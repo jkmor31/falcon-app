@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <h1>Welcome {{users[0].name | titlecase}}!</h1>
+  <h1>Welcome {{users[1].name | titlecase}}!</h1>
   <div class="container">
     <div>
       <mat-card>
@@ -7,26 +7,26 @@
         <div class="info">
           <table >
             <tr>
-              <th>Name:</th><td>{{users[0].name | titlecase}}</td>
+              <th>Name:</th><td>{{users[1].name | titlecase}}</td>
             </tr>
             <tr>
-              <th>Age:</th><td>{{users[0].age}}</td>
+              <th>Age:</th><td>{{users[1].age}}</td>
             </tr>
             <tr>
-              <th>Email:</th><td>{{users[0].email}}</td>
+              <th>Email:</th><td>{{users[1].email}}</td>
             </tr>
             <ng-container >
               <tr>
-                <th>Account Type:</th><td>{{iras[0].label}}</td>
+                <th>Account Type:</th><td>{{iras ? iras.label : "type"}}</td>
               </tr>
               <tr>
-                <th>Balance:</th><td>{{iras[0].balance | currency}}</td>
+                <th>Balance:</th><td>{{iras ? (iras.balance | currency) : "balance"}}</td>
               </tr>
               <tr>
-                <th>Annual Contribution:</th><td>{{iras[0].annualContribution | currency}}</td>
+                <th>Annual Contribution:</th><td>{{iras ? (iras.annualContribution | currency) : "annual contribution"}}</td>
               </tr>
               <tr>
-                <th>Account Date:</th><td>{{iras[0].createdAt |  date}}</td>
+                <th>Account Date:</th><td>{{iras ? (iras.createdAt | date) : "account date"}}</td>
               </tr>
             </ng-container>
         </table>

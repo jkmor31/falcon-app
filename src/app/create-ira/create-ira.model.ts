@@ -4,5 +4,6 @@ export interface Ira {
     balance?: number,
     annualContribution?: number,
     userId?: number,
+    newUserId?: number,
     createdAt?: string
 }

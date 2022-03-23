@@ -12,8 +12,6 @@ h1 {
 
 }
 .navbar {
-    overflow: hidden;
-    font-family: Arial;
     a {
         float: left;
         font-size: 16px;
@@ -21,6 +19,7 @@ h1 {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        
       }
 }
 
@@ -39,7 +38,7 @@ h1 {
       }
 }
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #A27677;
+    background-color: #3336908e;
 }
 .dropdown-content {
     display: none;

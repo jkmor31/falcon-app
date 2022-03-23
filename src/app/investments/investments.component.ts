@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InvestmentsService } from '../investments.service';
 import { Investment } from './investment.model';
 import { IraService } from '../ira.service';
+import { Ira } from '../create-ira/create-ira.model';
 
 
 
@@ -17,6 +18,8 @@ export class InvestmentsComponent implements OnInit {
   newInvestment: Investment = {};
   newArr: any[] = [];
   key:any;
+  iras: Ira[]| any = [];
+  accountId: number = 0;
   
 
   constructor(
@@ -44,8 +47,10 @@ export class InvestmentsComponent implements OnInit {
 
   getInvestments(): void {
     this.iraService.getIras().subscribe(payload =>{
-      this.investments = payload[0].investments;
-    });
+      this.iras = payload.find((acc: { id: number; }) => acc.id == payload.length);
+      this.investments = this.iras.investments;
+      this.accountId = this.iras.id;
+    })
   }
 
   addInvestment(index: number): void {
@@ -61,7 +66,7 @@ export class InvestmentsComponent implements OnInit {
   
   reconstituteFund(index:number):void {
     const reconstitutedFund: Investment = {
-      name: '', type: 'Mutual Fund', symbol: '', expenseRatio: 0, nAV: 0, inceptionDate: '', accountId: 1};
+      name: '', type: 'Mutual Fund', symbol: '', expenseRatio: 0, nAV: 0, inceptionDate: '', accountId: this.accountId};
 
     for (let [key, value] of Object.entries(this.funds[index])) {
       switch (key){
@@ -82,7 +87,7 @@ export class InvestmentsComponent implements OnInit {
           break;
       }
     }
-
+   
     this.newInvestment = reconstitutedFund;
     this.makeUsed(index);
   }

@@ -5,6 +5,7 @@ import { IraComponent } from './ira/ira.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateIraComponent } from './create-ira/create-ira.component';
 import { InvestmentsComponent } from './investments/investments.component';
+import { StocksComponent } from './stocks/stocks.component';
 
 const routes: Routes = [
   {path: "", redirectTo: 'home', pathMatch: 'full'},
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path: "dashboard/:id", component: DashboardComponent},
   {path: "investments", component: InvestmentsComponent},
   {path: "create-ira", component: CreateIraComponent},
-
+  {path: "stocks", component: StocksComponent},
 ];
 
 @NgModule({

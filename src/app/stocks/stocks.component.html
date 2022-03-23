@@ -1,0 +1,24 @@
+<h1>Available Stocks:</h1>
+<div class="container" >
+<mat-card>
+
+<table>
+    <tr><th>Investment Name</th>
+    <th>Symbol</th>
+    <th>Market Cap</th>
+    <th>Market Type</th>
+
+</tr>
+    <tr *ngFor="let stock of stocks, let i = index">
+            
+            <td>{{stock.name}}</td>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.market_cap}}</td>
+            <td>{{stock.market_type}}</td>
+        
+        </tr>
+    
+
+</table>
+</mat-card>
+</div>

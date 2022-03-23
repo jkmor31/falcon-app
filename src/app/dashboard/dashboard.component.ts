@@ -11,7 +11,7 @@ import { User } from '../user.model';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  iras: Ira[] = [];
+  iras: Ira[]| any = [];
   investments: Investment[] = [];
   users: User[] = [];
 
@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit {
         this.users = payload;
       })})
     this.iraService.getIras().subscribe(payload =>{
-      this.iras = payload;
-      this.investments = payload[0].investments;
+      this.iras = payload.find((acc: { id: number; }) => acc.id == payload.length);
+      this.investments = this.iras.investments;
     })
 
   }

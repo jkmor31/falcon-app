@@ -19,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
+import { StocksComponent } from './stocks/stocks.component';
 
 
 
@@ -31,6 +32,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     CreateIraComponent,
     FooterComponent,
     InvestmentsComponent,
+    StocksComponent,
 
   ],
   imports: [

@@ -14,7 +14,8 @@ export class CreateIraComponent implements OnInit {
     // label: '',
     // balance: 0,
     // annualContribution: 0,
-    // userId: 0
+    newUserId: 1,
+    userId: 3
   }
 
 

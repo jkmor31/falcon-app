@@ -18,6 +18,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     DashboardComponent,
     CreateIraComponent,
     FooterComponent,
-    InvestmentsComponent
+    InvestmentsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
-    MatStepperModule
+    MatStepperModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

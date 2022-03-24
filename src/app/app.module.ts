@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { IraComponent } from './ira/ira.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { StocksComponent } from './stocks/stocks.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 
 
@@ -33,6 +34,7 @@ import { StocksComponent } from './stocks/stocks.component';
     FooterComponent,
     InvestmentsComponent,
     StocksComponent,
+    CalculatorComponent,
 
   ],
   imports: [
@@ -47,7 +49,8 @@ import { StocksComponent } from './stocks/stocks.component';
     MatInputModule,
     MatSelectModule,
     MatStepperModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

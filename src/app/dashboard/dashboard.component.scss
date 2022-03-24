@@ -10,42 +10,66 @@
 .container {
     padding: 20px;
     min-height: 80vh;
+    max-height: 120vh;
     display: flex;
-    justify-content: space-around;
-
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
     mat-card {
-        margin: 10px auto;
+        margin: auto;
         display: inline-block;
         padding: 20px;
         text-align: center;
     }
-    .info {
+    .user-info {
+        margin: 0 0 30px 20px;
         th {
             padding: 5px 15px;
         }
     }
-    .investments {
-            margin: auto;
-            font-size: 16px;
-            td {
-                padding: 5px 15px;
-            }
-            th {
-                padding: 10px 15px;
-                border-bottom: 1px solid black;
-            }
-
+    .spacer {
+        width: 25vw;
+        min-height: 70vh;
+        text-align: left;
+        margin-left: 20px;
+        mat-card {
+            padding: 20px;
         }
-
+        ul {padding: 5px;margin: 10px;}
+        li {
+            text-align: left;
+            padding: 10px 0;
+           
+        }
+    }
+    .investments {
+        margin: auto;
+        font-size: 16px;
+        text-align: left;
+        margin-top: 15px;
+        width: 50vw;
+        button {
+            text-align: center;
+        }
+        td {
+            padding: 5px 15px;
+            font-size: 14px;
+        }
+        th {
+            padding: 10px 15px;
+            border-bottom: 1px solid black;
+            font-size: 14px;
+        }
+    }
 }
-a {
+.btn {
+    width: 150px;
+    margin: 20px;
     text-decoration: none;
     color: white;
     background-color: #1d3557;
     padding: 7px;
     border-radius: 5px;
-    width: 130px;
     text-align: center;
     display: inline-block;
-    margin: 30px;
 }

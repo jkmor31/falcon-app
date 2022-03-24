@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Ira } from '../create-ira/create-ira.model';
 import { Investment } from '../investments/investment.model';
 import { User } from '../user.model';
+import { Stock } from '../stocks/stock.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,7 @@ export class DashboardComponent implements OnInit {
   iras: Ira[]| any = [];
   investments: Investment[] = [];
   users: User[] = [];
+  stocks: Stock[]| any = [];
 
   constructor(
     private route:ActivatedRoute,

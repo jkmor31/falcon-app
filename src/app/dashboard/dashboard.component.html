@@ -1,16 +1,13 @@
 <div class="wrapper">
   <h1>Welcome {{users[1].name | titlecase}}!</h1>
   <div class="container">
-    <div>
+    <div class="user-info">
       <mat-card>
-        <h2>User info</h2>
+        <h2>User info</h2><hr>
         <div class="info">
           <table >
             <tr>
               <th>Name:</th><td>{{users[1].name | titlecase}}</td>
-            </tr>
-            <tr>
-              <th>Age:</th><td>{{users[1].age}}</td>
             </tr>
             <tr>
               <th>Email:</th><td>{{users[1].email}}</td>
@@ -33,17 +30,32 @@
       </div>
     </mat-card>
     </div>
-    <div>
-      <mat-card
-        ><h2>Investment Portfolio</h2>
-        <table class="investments">
-          <th>Investment Name</th>
-          <th>Symbol</th>
-          <th>Investment Type</th>
-          <th>Expense Ratio</th>
-          <th>NAV</th>
-          <th>Date Created</th>
-          <th>Delete</th>
+
+    <div class="spacer">
+      <mat-card>
+        <h2>Quick Links:</h2>
+        <hr>
+        <ul>
+          <li>See Future Savings - <a routerLink="/calculator">Retirement Calculator</a></li>
+          <li>See Investments - <a routerLink="/investments">Mutual Funds</a></li>
+          <li>View Stocks - <a routerLink="/stocks">Stocks</a></li>
+        </ul>
+      </mat-card>
+    </div>
+
+    <div class="investment">
+      <mat-card class="investment-card">
+        <h2>Investment Portfolio</h2>
+        <mat-tab-group dynamicHeight animationDuration="1000ms">
+          <mat-tab label="Investments">
+          <table class="investments">
+            <th>Investment Name</th>
+            <th>Symbol</th>
+            <th>Investment Type</th>
+            <th>Expense Ratio</th>
+            <th>NAV</th>
+            <th>Date Created</th>
+            <th>Delete</th>
 
           <tr *ngFor="let investment of investments, let i = index">
             <td>{{ investment.name }}</td>
@@ -57,8 +69,38 @@
           </button>
           </tr>
         </table>
-        <a routerLink="/investments">Add Investments</a>
+        <a class="btn" routerLink="/investments">Add Investments</a>
+      </mat-tab>
+      <mat-tab label="Stocks">
+        <table class="investments">
+          <th>Stock Name</th>
+          <th>Symbol</th>
+          <th>Price</th>
+          <th>Amount </th>
+          <th>Sell</th>
+
+          <tr *ngFor="let stock of stocks; let i = index">
+            <td>{{ stock.name }}</td>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.price }}</td> 
+            <td>{{ stock.quantity }}</td>
+            <td>
+              <!-- <button
+              (click)="deleteStock(stock.id, i)"
+                mat-mini-fab
+                color="primary"
+                aria-label="icon button with a trash icon"
+              >
+                <mat-icon>delete</mat-icon>
+              </button> -->
+            </td>
+          </tr>
+        </table>
+        <a class="btn" routerLink="/stocks">Add Stocks</a>
+      </mat-tab>
+    </mat-tab-group>
       </mat-card>
     </div>
+
   </div>
 </div>
